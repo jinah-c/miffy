@@ -1,0 +1,242 @@
+/* style.css */
+@font-face {
+    font-family: 'ROKAFSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansBold.woff') format('woff');
+    font-weight: 600;
+    font-style: bold;
+  }
+  @font-face {
+    font-family: 'ROKAFSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSansMedium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'TmoneyRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+    font-weight: 600;
+    font-style: Bold;
+  }
+  @font-face {
+    font-family: 'TmoneyRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindRegular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  /* reset css */
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  
+  /*  var(--변수지정)  */
+  :root {
+    --color-bg-dark: #38343e;
+    --color-bg-light: #f8f6ec;
+
+    --color-primary: #e04a8e;
+    --color-primary-dark: #8d2352;
+    --color-primary-light: #ff8ec1;
+
+    /* primary를 강조하거나 보완하는 컬러 */
+    --color-secondary: #9c49cd;
+
+    /* Semantic Color */
+    --color-error: #cd454a;
+    --color-success: #3385e5;
+    --color-warning: #ffd233;
+    --color-Disabled: #e0e4e8;
+    --color-neutrals: #b8b9ba;
+
+    --color-white: #fff;
+    --color-black: rgb(31, 30, 35);
+
+    --color-gradation: background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+
+     /*  반응형 width  */
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+
+    /* 트랜지션 효과 */
+    --transition: all 400ms ease;   
+  }
+  
+
+  html{
+    /* 매끄러운 스크롤 */
+    scroll-behavior: smooth;
+    background-image: url(./asset/images/bg--006.png);
+
+  }
+  
+
+  
+  body{
+    font-family: 'TmoneyRound', sans-serif;
+    margin: 1rem 1rem;
+    min-width: 360px;
+  }
+  
+  
+   /*=============  GENEARL STYLE  =============*/
+   .container_01 {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  
+  
+  h1,
+  h2,
+  h3{
+    font-weight: 600;
+    word-break: keep-all;
+  }
+  
+ h4,h5, h6 {
+    font-weight: 400;
+    word-break: keep-all;
+  }
+  
+  h1{
+    font-size: 2rem;
+  }
+  
+  section{
+  max-width: 1024px;
+  margin:0 auto 0;
+  padding-top: 0rem;
+  }
+  
+  
+  section > h2 {
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    font-weight: 600;
+    font-size: 2.8rem;
+    letter-spacing: 0.046em;
+    text-transform : uppercase;
+  }
+  
+  section > h5{
+   letter-spacing: 0.062em;
+  }
+  
+  .text-light{
+    color: var(--color-bg-light);
+  }
+  
+  a{
+    color:var(--color-primary);
+    transition: var(--transition)
+  }
+  
+  a:hover{
+    color: var(--color-secondary);
+  }
+  
+  .btn{
+    width: max-content;
+    display: inline-block;
+    color: var(--color-primary);
+    padding: 0.75rem 1.6rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border:1px solid var(--color-primary);
+    /* 호버효과에 부드러운 트랜지션 추가 */
+    transition: var(--transition);
+  }
+  
+  
+  .btn:hover{ 
+   background: var(--color-primary-dark);
+   color: var(--color-bg-light);
+   border-color: transparent;
+   
+  }
+  
+  .btn-primary{
+    background: var(--color-primary);
+    color: var(--color-bg-light)
+  }
+  
+  img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+
+  /* .css{
+    width: 100%;
+    height: 1920px;
+    background-color:#fcfaf1;
+  }
+
+  .list{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+  }
+
+  .list li{
+    position: relative;
+    float: left;
+  }
+  
+  .list li a{
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 1.0rem;
+  }
+  
+  .list li:last-child a{
+    padding-right: 0;
+  }
+  
+  /* li 사이사이 구분 막대기 
+  .list li:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 1rem;
+    background-color: var(--color-primary);
+    transform: translateY(-50%);
+  }
+    
+  /* li의 첫번째 구분 막대기 없애기 
+  .list li:first-child:after {
+    display: none;
+  } */
+  
+
+  
+  /*=============  MEDIA QUERIES (MEDIUM DEVICES)  =============*/
+  /* 최대너비 1024px으로 지정 */
+  @media screen and (max-width: 1024px){
+    .container{
+        width: var(--container-width-md);
+    }
+
+  } 
+  
+  /*=============  MEDIA QUERIES (SMALL DEVICES)Mobile  =============*/
+  /* 최대너비 600px으로 지정 */
+  @media screen and (max-width: 600px){
+    .container{
+        width: var(--container-width-sm);
+    }
+
+  }
